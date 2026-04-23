@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h> // Required for M_PI and pow()
+
+int main() {
+    double radius, area;
+
+    // Ask user for input
+    printf("Enter the radius of the circle: ");
+    scanf("%lf", &radius);
+
+    // Calculate area using M_PI and pow()
+    // Area = pi * r^2
+    area = M_PI * pow(radius, 2);
+
+    // Output the result
+    printf("Radius: %.2f\n", radius);
+    printf("Area: %.4f\n", area);
+
+    return 0;
+}
+
+
+OUTPUT :
+
+Enter the radius of the circle: 5
+Radius: 5.00
+Area: 78.5398
+
