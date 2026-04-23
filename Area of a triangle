@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h> // Library for sqrt() function
+
+int main() {
+    double a, b, c, s, area;
+
+    // Input three sides of the triangle
+    printf("Enter three sides of the triangle: ");
+    scanf("%lf %lf %lf", &a, &b, &c);
+
+    // Evaluate expression for semi-perimeter
+    s = (a + b + c) / 2;
+
+    // Evaluate expression for area using sqrt() library function
+    area = sqrt(s * (s - a) * (s - b) * (s - c));
+
+    // Print result
+    printf("Area of the triangle: %.2lf\n", area);
+
+    return 0;
+}
+
+
+OUTPUT:
+
+Enter three sides of the triangle: 3 4 5
+Area of the triangle: 6.00
