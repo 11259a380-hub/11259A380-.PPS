@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    char ch;
+
+    // Prompt user for a character
+    printf("Enter a character: ");
+    
+    // Read character from user
+    scanf("%c", &ch);
+
+    // %c displays the character itself
+    // %d displays the integer (ASCII) value of the character
+    printf("The ASCII value of %c is: %d\n", ch, ch);
+
+    return 0;
+}
+
+
+OUTPUT :
+Enter a character: A
+The ASCII value of A is: 65
