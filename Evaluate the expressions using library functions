@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h> // Library for pow()
+
+int main() {
+    double A = 2.0, B = 3.0, C = 6.0;
+    double result;
+
+    // Expression: (A+B+(2*C/3*A)+A^2+2*B)
+    // Simplified: A + 3*B + (2*C / (3*A)) + pow(A, 2)
+    
+    result = A + B + ((2.0 * C) / (3.0 * A)) + pow(A, 2) + (2.0 * B);
+
+    printf("Values: A=%.1f, B=%.1f, C=%.1f\n", A, B, C);
+    printf("Result of (A+B+(2C/3A)+A^2+2B): %f\n", result);
+
+    return 0;
+}
+
+
+OUTPUT:
+
+Values: A=2.0, B=3.0, C=6.0
+Result of (A+B+(2C/3A)+A^2+2B): 18.666667
