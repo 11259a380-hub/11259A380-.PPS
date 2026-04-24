@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+// Function declaration using pointers for call by reference
+void swap(int *num1, int *num2);
+
+int main() {
+    int a, b;
+
+    // Input two numbers from the user
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    printf("\nBefore Swapping: a = %d, b = %d\n", a, b);
+
+    // Call by reference: pass the addresses of 'a' and 'b'
+    swap(&a, &b);
+
+    printf("After Swapping:  a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+
+// Function definition to swap values at the given memory addresses
+void swap(int *p1, int *p2) {
+    int temp;
+    temp = *p1; // Store the value at address p1 in temp
+    *p1 = *p2;  // Copy the value at address p2 to address p1
+    *p2 = temp; // Copy the value from temp to address p2
+}
+
+OUTPUT :
+Enter two numbers: 10 20
+Before Swapping: a = 10, b = 20
+After Swapping:  a = 20, b = 10
+
