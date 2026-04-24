@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+// Recursive function to find factorial of n
+unsigned long long factorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1; // Base case: 0! and 1! are both 1
+    } else {
+        // Recursive case: n! = n * (n-1)!
+        return n * factorial(n - 1);
+    }
+}
+
+int main() {
+    int num;
+    printf("Enter a positive integer: ");
+    scanf("%d", &num);
+
+    // Factorial is not defined for negative numbers
+    if (num < 0) {
+        printf("Error: Factorial is not defined for negative numbers.\n");
+    } else {
+        printf("Factorial of %d is %llu\n", num, factorial(num));
+    }
+
+    return 0;
+}
+
+OUTPUT :
+Enter a positive integer: 5
+Factorial of 5 is 120
+
