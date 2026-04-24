@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double a, b, c, disc, r1, r2;
+    printf("Enter a, b, c: ");
+    scanf("%lf %lf %lf", &a, &b, &c);
+    disc = b * b - 4 * a * c;
+
+    if (disc > 0) { // Real and distinct
+        printf("r1=%.2f, r2=%.2f\n", (-b+sqrt(disc))/(2*a), (-b-sqrt(disc))/(2*a));
+    } else if (disc == 0) { // Real and equal
+        printf("r1=r2=%.2f\n", -b/(2*a));
+    } else { // Complex
+        printf("r1=%.2f+%.2fi, r2=%.2f-%.2fi\n", -b/(2*a), sqrt(-disc)/(2*a), -b/(2*a), sqrt(-disc)/(2*a));
+    }
+    return 0;
+}
+
+
+OUTPUT :
+Distinct: 1 -5 6 
+ 3.00, 2.00
+Equal: 1 -2 1 
+ 1.00
+Complex: 1 4 5 
+ -2.00+1.00i, -2.00-1.00i
