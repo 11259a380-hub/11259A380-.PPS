@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+    int *ptr = arr; // Points to the first element arr[0]
+
+    printf("1. Initial pointer value (*ptr): %d\n", *ptr);
+
+    // Using ptr + n to access an element (Addition)
+    printf("2. Third element using *(ptr + 2): %d\n", *(ptr + 2));
+
+    // Using ptr++ to move forward (Increment)
+    ptr++; 
+    printf("3. After ptr++, new value is: %d\n", *ptr);
+
+    // Using ptr-- to move backward (Decrement)
+    ptr--;
+    printf("4. After ptr--, value is back to: %d\n", *ptr);
+
+    // Accessing elements in a loop using pointer arithmetic
+    printf("5. All elements using a loop:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("   Element %d: %d\n", i, *(arr + i));
+    }
+
+    return 0;
+}
+
+OUTPUT :
+1. Initial pointer value (*ptr): 10
+2. Third element using *(ptr + 2): 30
+3. After ptr++, new value is: 20
+4. After ptr--, value is back to: 10
+5. All elements using a loop:
+   Element 0: 10
+   Element 1: 20
+   Element 2: 30
+   Element 3: 40
+   Element 4: 50
+
