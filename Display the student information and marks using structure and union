@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <string.h>
+
+// Structure: Memory is allocated for every member separately
+struct StudentStruct {
+    char name[20];
+    int roll;
+    float marks;
+};
+
+// Union: Members share the same memory location
+union StudentUnion {
+    char name[20];
+    int roll;
+    float marks;
+};
+
+int main() {
+    struct StudentStruct s;
+    union StudentUnion u;
+
+    // --- Structure Demonstration ---
+    strcpy(s.name, "Alice");
+    s.roll = 101;
+    s.marks = 85.5;
+
+    printf("--- Structure Output ---\n");
+    printf("Name: %s, Roll: %d, Marks: %.2f\n", s.name, s.roll, s.marks);
+    printf("Total Size of Structure: %lu bytes\n\n", sizeof(s));
+
+    // --- Union Demonstration ---
+    printf("--- Union Output (Sequential Access) ---\n");
+    
+    strcpy(u.name, "Bob");
+    printf("Assigned Name: %s\n", u.name);
+    
+    u.roll = 102;
+    printf("Assigned Roll: %d (Notice Name is now corrupted)\n", u.roll);
+    
+    u.marks = 92.0;
+    printf("Assigned Marks: %.2f (Notice Roll is now corrupted)\n", u.marks);
+    
+    printf("Total Size of Union: %lu bytes\n", sizeof(u));
+
+    return 0;
+}
+
+OUTPUT :
+--- Structure Output ---
+Name: Alice, Roll: 101, Marks: 85.50
+Total Size of Structure: 28 bytes
+
+--- Union Output (Sequential Access) ---
+Assigned Name: Bob
+Assigned Roll: 102 (Notice Name is now corrupted)
+Assigned Marks: 92.00 (Notice Roll is now corrupted)
+Total Size of Union: 20 bytes
+
+
